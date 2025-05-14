@@ -80,30 +80,40 @@
     font-size: 14px;
   }
   
-  nav {
-    background-color: var(--gris-claro);
-    padding: 20px 0;
-  }
-
-  .nav-list {
+  .navbar {
     display: flex;
     justify-content: center;
-    list-style: none;
-  }
-  
-  .nav-list li {
-    margin: 0 15px;
-  }
-  
-  .nav-list a {
-    color: var(--marron-oscuro);
-    text-decoration: none;
-    font-size: 16px;
-  }
+    align-items: center;
+    padding: 20px;
+    background-color: var(--gris-claro);
+}
 
-  .nav-list a:hover {
-    color: var(--marron-suave);
-  }
+    .nav-list {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+    }
+
+    .nav-list li a {
+        text-decoration: none;
+        color: var(--marron-oscuro);
+        font-size: 18px;
+        transition: color 0.3s ease;
+     }
+
+
+    .nav-list li a:hover {
+        color: var(--azul-claro);
+    }
+    
+    /* Estilos para la barra de hamburguesa */
+    .hamburger {
+        display: none; /* Se oculta en pantallas grandes */
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+    }
+    /* primera parte */
   
   .hero {
     display: flex;
@@ -269,8 +279,9 @@
     justify-content: space-between;
     align-items: center;
     height: 100dvh; /* Asegura que ocupe toda la altura de la pantalla */
-    padding: 40px;
+    padding: 140px;
     background-color: var(--gris-claro);
+
   }
   
   .foto {
@@ -363,7 +374,131 @@
     object-fit: cover;  /* Ajusta el sticker a la imagen */
   }
 
+  /* sección resume */
 
+  .seccion-resume {
+    height: 100dvh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fffefc;
+    text-align: center;
+  }
+
+  .title-seccion {
+    font-size: 4rem;
+    font-family: beauty;
+    color: var(--marron-suave);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .contenido-resume {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .columna {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .bloque h3 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .lista{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .lista li strong {
+    font-size: 18px;
+    color: var(--marron-medio);
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .habilidades li
+  {
+    font-size: 18px;
+    color: var(--marron-medio);
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bolder;
+  }
+  .bloque p {
+    font-size: 16px;
+    color: #555;
+  }
+
+  .habilidades {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .habilidades li {
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .estrellas {
+    color: var(--dorado-pastel);
+    font-size: 18px;
+  }
+
+     /* footer */
+     .footer {
+        background-color: var(--gris-claro); /* Color suave para el fondo */
+        color: #fff; /* Color blanco para el texto */
+        padding: 10px 10px;
+        text-align: center;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        color: var(--marron-medio);
+
+    }
+
+    
+    
+    .footer-right a {
+        font-size: 24px;
+        margin: 0 15px;
+        transition: all 0.3s ease;
+        color: var(--marron-medio);
+
+    }
+    
+    .footer-right a:hover {
+        color: var(--marron-oscuro); /* Cambio de color al pasar el mouse */
+        transform: scale(1.1); /* Efecto de zoom */
+    }
   /* MEDIA QUERIES */
 
   @media (max-width: 768px) {
@@ -393,8 +528,6 @@
             max-width: 90%;
             margin: 0 auto;
           }
-        
-
     /* Ajustes para la foto y sticker en móviles */
     .foto{
       height: auto;
@@ -432,7 +565,7 @@
           }
 
           .seccion-portfolio h1 {
-            font-size: 4rem;
+            font-size: 3.7rem;
           }
           .hero h1 {
             font-size: 5rem;
@@ -456,7 +589,66 @@
             width: 100%;
             border-radius: 12px;
           }
+
+          .seccion-resume {
+            height: auto; /* Dejá que la altura se ajuste al contenido */
+            padding: 40px 20px;
+          }
+
+          .contenido-resume {
+            grid-template-columns: 1fr; /* Una sola columna en celular */
+            gap: 30px;
+          }    
+          
+          .bloque h3 {
+            font-size: 28px;
+            text-align: center;
+          }
         
+          .lista li strong,
+          .habilidades li {
+            font-size: 16px;
+          }
+        
+          .estrellas {
+            font-size: 16px;
+          }
+
+          .footer-content {
+            flex-direction: column;
+            text-align: center;
+        }
+        .footer-left p {
+            margin-bottom: 10px;
+        }
+        .footer-right {
+            margin-top: 10px;
+        }
+        .nav-list {
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background-color: var(--gris-claro);
+            width: 100%;
+            display: none; /* Se oculta por defecto */
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            text-align: center;
+         }
+
+        .nav-list.active {
+            display: flex; /* Muestra la lista cuando se activa */
+        }
+    
+        .hamburger {
+            display: block; /* Muestra la barra de hamburguesa en pantallas pequeñas */
+        }
+    
+        .nav-list li a {
+            font-size: 18px;
+            font-weight: normal;
+        }
     }
 
     
