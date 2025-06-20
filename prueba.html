@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
+<body class="sobre-mi">
     <header>
         <div class="header-content">
             <p>Made with ♡ by Be</p>
@@ -27,26 +27,36 @@
             <i class="fas fa-bars"></i>
         </div>
     </nav>
-   
 
-    <section class="sobre-mi">
-        <div class="contenedor-sobre-mi">
-          <div class="lado-izquierdo">
-            <div class="fondo-cuadricula"></div>
-            <div class="imagenes">
-              <img src="img/im1.jpeg" alt="Foto 1" class="img-torcida uno">
-              <img src="img/img2.jpeg" alt="Foto 2" class="img-torcida dos">
-              <img src="doodle.png" alt="Sticker" class="elemento-overlay">
-            </div>
-          </div>
-          
-          <div class="lado-derecho">
-            <h2 class="titulo">Sobre mí</h2>
-            <p class="texto-intro">Hola! Soy Belu... (texto descriptivo)...</p>
-            <img src="decoracion.png" class="decoracion" alt="">
-          </div>
-        </div>
-      </section>
-      
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const body = document.body;
+        const navbar = document.querySelector(".navbar");
+    
+        if (body.classList.contains("sobre-mi")) {
+          window.addEventListener("scroll", function () {
+            if (window.scrollY > 50) {
+              navbar.classList.add("scrolled");
+            } else {
+              navbar.classList.remove("scrolled");
+            }
+          });
+        }
+      });
+    </script>
+
+
+
+    <section class="aboutMe">
+      <div class="overlay"></div>
+      <div class="aboutMe_contenido">
+        <h1>Belén Évora</h1>
+        <h2>Probably at home with many pestañas open</h2>
+      </div>
+    </section>
+
+    
+    
+     
 </body>
 </html>

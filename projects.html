@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belén Évora </title>
+    <title>Lo que hago, lo que amo </title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -27,12 +27,117 @@
             <i class="fas fa-bars"></i>
         </div>
     </nav>
-    <section class="seccion-construccion">
-        <h3 class="construcción-h3">Website</h3>
-        <h2 class="construcción-h2"> <span>E</span>n construcción 
-        </h2>
-        <p class="construcción-h3">Trabajando en esto con mucho ♡</p>
+  
+    <section class="projects">
+        <div class="projects-content">
+          <p class="username">@beluevora</p>
+          <h1>Lo que hago, lo que amo</h1>
+          <h2>Un pedacito de mí, en formato visual</h2>
+        </div>
       </section>
-      
+
+      <section class="about-section">
+        <div class="about-col col-1">
+          <h2>Sobre mí</h2>
+          <p> Soy Belén! Me encanta diseñar cosas lindas. </p>
+          <div class="social-icons">
+            <a href="https://instagram.com/beluevora" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://pinterest.com/beluevora" target="_blank">
+              <i class="fa-brands fa-pinterest"></i>
+            </a>
+            <a href="https://wa.me/59892036592" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="mailto:beluevora@gmail.com">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="about-col col-2">
+            <img src="img/belu.jpeg" alt="Foto representativa">
+        </div>
+
+        <div class="about-col col-3">
+            <img src="img/photobooth.jpg" alt="Otra imagen">
+            <p>Trabajo con marcas que quieren mostrar su esencia, conectar y destacarse. ¿Creamos algo juntas?</p>
+            <a href="https://wa.me/59892036592"><button class="contact-btn">Contact Me</button></a>
+        </div>
+        </section>
+
+
+        <section class="videos-wrapper">
+        <h2 class="videos-title">Diseños que conectan</h2>
+        <div class="videos-section">
+
+     
+            <div class="video-col">
+                <div class="phone-mockup">
+                    <video id="video1" controls muted class="mockup-video">
+                      <source src="img/videos/bendita.MP4" type="video/mp4">
+                    </video>
+                    <img src="img/IPHONE12.png" alt="Mockup de celular" class="phone-frame">
+                  </div>
+                  <p>@bendita_invitaciones en Instagram </p>
+             </div>
+
+             <div class="video-col">
+                <div class="phone-mockup">
+                    <video id="video2" controls  muted class="mockup-video">
+                      <source src="img/videos/bendita.MP4" type="video/mp4">
+                    </video>
+                    <img src="img/IPHONE12.png" alt="Mockup de celular" class="phone-frame">
+                  </div>
+             </div>
+
+             <div class="video-col">
+                <div class="phone-mockup">
+                    <video id="video3" controls muted class="mockup-video">
+                      <source src="img/videos/benditatiktok.MP4" type="video/mp4">
+                    </video>
+                    <img src="img/IPHONE12.png" alt="Mockup de celular" class="phone-frame">
+                  </div>
+                  <p>@bendita_invitaciones en TikTok • 225K views</p>
+
+             </div>
+        </div>
+        </section>
+             <script>
+                const videos = [
+                  document.getElementById("video1"),
+                  document.getElementById("video2"),
+                  document.getElementById("video3")
+                ];
+              
+                function pauseOthers(current) {
+                  videos.forEach(video => {
+                    if (video !== current) {
+                      video.pause();
+                    }
+                  });
+                }
+              
+                videos.forEach((video, index) => {
+                  video.addEventListener("play", () => {
+                    pauseOthers(video);
+                  });
+              
+                  video.addEventListener("ended", () => {
+                    const nextVideo = videos[index + 1];
+                    if (nextVideo) {
+                      nextVideo.play();
+                    }
+                  });
+                });
+              
+                // Opcional: autoplay del primero al cargar
+                window.addEventListener("load", () => {
+                  videos[0].play();
+                });
+              </script>
+               
+            <script src="script.js"></script> 
 </body>
 </html>
