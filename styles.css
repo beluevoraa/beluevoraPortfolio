@@ -745,27 +745,37 @@
 }
 
 .videos-title {
-  font-family: 'Beauty', serif; /* o tu fuente principal */
-  font-size: 2.8rem;
-  color: var(--marron-medio); /* o el color que uses para títulos */
+  font-family: 'Beauty', serif;
+  font-size: 2.4rem;
+  color: var(--marron-medio);
+  background-color: var(--beige-claro);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  display: inline-block;
+  transform: rotate(-2deg);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
+  border: 1.5px dashed var(--rosa-suave);
+  margin: 0 auto 3rem;
   text-align: center;
-  margin-bottom: 3rem;
-  padding: 0 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   position: relative;
+  text-transform: uppercase;
 }
 
-.videos-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background-color: var(--gris-medio); /* o un rosa/marrón suave */
-  margin: 0.8rem auto 0;
-  border-radius: 10px;
-  opacity: 0.7;
+.videos-title::before {
+  content: "🎞️🧸📎✨";
+  position: absolute;
+  left: -2rem;
+  top: -1rem;
+  font-size: 1.5rem;
+  transform: rotate(10deg);
 }
+
+.videos-section-title-wrapper {
+  text-align: center;
+  width: 100%;
+}
+ 
+
 
 .mockup-video {
   position: absolute;
@@ -788,12 +798,53 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+.video-overlay {
+  position: absolute;
+  top: 7%;
+  left: 11%;
+  width: 78%;
+  height: 86%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  pointer-events: none; /* para que no bloquee el click al video */
+  transition: all 0.3s ease;
+
+}
+.phone-mockup:hover .video-overlay {
+  background-color: rgba(78, 47, 83, 0.4);
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  
+}
 .phone-frame {
   position: relative;
   width: 100%;
   height: auto;
   z-index: 2;
 }
+
+.video-overlay p {
+ text-transform: uppercase;
+}
+
+.overlay-text {
+  transition: all 0.3s ease;
+}
+
+.phone-mockup:hover .overlay-text {
+  transform: scale(1.05);
+  letter-spacing: 1px;
+}
+ 
 
      /* footer */
      .footer {
@@ -933,6 +984,10 @@
         margin-bottom: 0rem;
 
        }
+
+       .projects h1 {
+        font-size: 4.6rem;
+       }
       
     }
 
@@ -1035,6 +1090,21 @@
         .construcción-h2 {
           font-size: 3rem;
         }
-    }
+
+        
+          .videos-title {
+            font-size: 1.6rem;
+            padding: 0.7rem 1.2rem;
+            transform: rotate(0deg);
+            border-radius: 8px;
+          }
+        
+          .videos-title::before {
+            left: -1rem;
+            top: -0.8rem;
+            font-size: 1.2rem;
+          }
+        }
+    
 
    

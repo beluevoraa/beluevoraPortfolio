@@ -69,7 +69,9 @@
 
 
         <section class="videos-wrapper">
-        <h2 class="videos-title">Diseños que conectan</h2>
+          <div class="videos-section-title-wrapper">
+            <h2 class="videos-title">Scroll aesthetic vibes</h2>
+          </div>
         <div class="videos-section">
 
      
@@ -78,16 +80,21 @@
                     <video id="video1" controls muted class="mockup-video">
                       <source src="img/videos/bendita.MP4" type="video/mp4">
                     </video>
+                    <div class="video-overlay">
+                      <p class="overlay-text">@bendita_invitaciones en Instagram</p>
+                    </div>
                     <img src="img/IPHONE12.png" alt="Mockup de celular" class="phone-frame">
                   </div>
-                  <p>@bendita_invitaciones en Instagram </p>
-             </div>
+              </div>
 
              <div class="video-col">
                 <div class="phone-mockup">
                     <video id="video2" controls  muted class="mockup-video">
                       <source src="img/videos/bendita.MP4" type="video/mp4">
                     </video>
+                    <div class="video-overlay">
+                      <p class="overlay-text"">@bendita_invitaciones en TikTok • 225K views</p>
+                    </div>
                     <img src="img/IPHONE12.png" alt="Mockup de celular" class="phone-frame">
                   </div>
              </div>
@@ -97,11 +104,14 @@
                     <video id="video3" controls muted class="mockup-video">
                       <source src="img/videos/benditatiktok.MP4" type="video/mp4">
                     </video>
+                    <div class="video-overlay">
+                      <p class="overlay-text"">@bendita_invitaciones en TikTok • 225K views</p>
+                    </div>
                     <img src="img/IPHONE12.png" alt="Mockup de celular" class="phone-frame">
                   </div>
-                  <p>@bendita_invitaciones en TikTok • 225K views</p>
-
              </div>
+
+
         </div>
         </section>
              <script>
@@ -150,6 +160,25 @@
                         </div>
                     </div>
                 </footer>
+                <script>
+                  const mockups = document.querySelectorAll('.phone-mockup');
+                
+                  mockups.forEach(mockup => {
+                    const overlayText = mockup.querySelector('.overlay-text');
+                
+                    // Guardar el texto original
+                    const originalText = overlayText.textContent;
+                
+                    mockup.addEventListener('mouseenter', () => {
+                      overlayText.textContent = 'dale play 💖';
+                    });
+                
+                    mockup.addEventListener('mouseleave', () => {
+                      overlayText.textContent = originalText;
+                    });
+                  });
+                </script>
+                
             <script src="script.js"></script> 
 </body>
 </html>
